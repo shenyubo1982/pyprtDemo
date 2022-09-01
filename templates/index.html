@@ -36,12 +36,16 @@
 
 <body>
   <div class="btn-group">
-    <button id="btn-get-info">Get info</button>
-    <button id="btn-post-info">Post info</button>
-    <button id="btn-post-params">Post Params</button>
-    <button id="btn-status-code">Status Code</button>
-    <button id="btn-json">Get Json</button>
-    <button id="btn-get-play">PlayDemo01</button>
+<!--    <button id="btn-get-info">Get info</button>-->
+<!--    <button id="btn-post-info">Post info</button>-->
+<!--    <button id="btn-post-params">Post Params</button>-->
+<!--    <button id="btn-status-code">Status Code</button>-->
+<!--    <button id="btn-json">Get Json</button>-->
+    <button id="btn-get-play01">BuildingStyle_V0.1</button>
+    <button id="btn-get-play02">AncientCityofChina-V0.2</button>
+    <button id="btn-get-play03">CircleHabeby-Sunban-v0.2</button>
+    <button id="btn-get-play04">CreateUrban_Max-v0.3</button>
+    <button id="btn-get-play05">ChinesePalacePro-1.0-CN</button>
 
     <form method="post" action="" enctype="multipart/form-data" id="myform">
       <div >
@@ -54,59 +58,59 @@
 
   <script>
     var baseUrl = 'http://192.168.31.100' + ':' + '8000'
-    var getInfoUrl = baseUrl + '/api/info'
-    var postParamsUrl = baseUrl + '/api/params'
-    var uploadImageUrl = baseUrl + '/api/pic'
-    var statusCodeUrl = baseUrl + '/api/stcode'
-    var getJsonUrl = baseUrl + '/api/json'
+    // var getInfoUrl = baseUrl + '/api/info'
+    // var postParamsUrl = baseUrl + '/api/params'
+    // var uploadImageUrl = baseUrl + '/api/pic'
+    // var statusCodeUrl = baseUrl + '/api/stcode'
+    // var getJsonUrl = baseUrl + '/api/json'
     var playDemo = baseUrl + '/api/play'
 
-    $('#btn-get-info').click(e => {
-      $.ajax({
-        type: 'get',
-        url: getInfoUrl,
-        data: {
-          type: 'male',
-          time: '2019-12-01'
-        },
-        success: data => {
-          $('#result').text(data)
-        },
-        error: (xhr, type) => { }
-      })
-    })
+    // $('#btn-get-info').click(e => {
+    //   $.ajax({
+    //     type: 'get',
+    //     url: getInfoUrl,
+    //     data: {
+    //       type: 'male',
+    //       time: '2019-12-01'
+    //     },
+    //     success: data => {
+    //       $('#result').text(data)
+    //     },
+    //     error: (xhr, type) => { }
+    //   })
+    // })
 
-    $('#btn-post-info').click(e => {
-      $.ajax({
-        type: 'post',
-        url: getInfoUrl,
-        data: {
-          name: 'Awesome_Leif',
-          age: 18
-        },
-        success: data => {
-          $('#result').text(data)
-        },
-        error: (xhr, type) => { }
-      })
-    })
+    // $('#btn-post-info').click(e => {
+    //   $.ajax({
+    //     type: 'post',
+    //     url: getInfoUrl,
+    //     data: {
+    //       name: 'Awesome_Leif',
+    //       age: 18
+    //     },
+    //     success: data => {
+    //       $('#result').text(data)
+    //     },
+    //     error: (xhr, type) => { }
+    //   })
+    // })
 
-    $('#btn-post-params').click(e => {
-      $.ajax({
-        type: 'post',
-        url: postParamsUrl,
-        data: {
-          browser: 'Chrome',
-          os: 'windows',
-          computer: 'acer',
-          folder: 'c://programm files'
-        },
-        success: data => {
-          $('#result').text(data)
-        },
-        error: (xhr, type) => { }
-      })
-    })
+    // $('#btn-post-params').click(e => {
+    //   $.ajax({
+    //     type: 'post',
+    //     url: postParamsUrl,
+    //     data: {
+    //       browser: 'Chrome',
+    //       os: 'windows',
+    //       computer: 'acer',
+    //       folder: 'c://programm files'
+    //     },
+    //     success: data => {
+    //       $('#result').text(data)
+    //     },
+    //     error: (xhr, type) => { }
+    //   })
+    // })
 
     $('#file').click((e) => {
       let fd = new FormData();
@@ -150,20 +154,76 @@
       })
     })
 
-    $("#btn-json").click(e => {
+    // $("#btn-json").click(e => {
+    //   $.ajax({
+    //     type: 'get',
+    //     url: getJsonUrl,
+    //     success: data => {
+    //       $('#result').text(data)
+    //     },
+    //     error: (xhr, type) => {
+    //       $('#result').text('error')
+    //     }
+    //   })
+    // })
+
+    $('#btn-get-play01').click(e => {
       $.ajax({
         type: 'get',
-        url: getJsonUrl,
+        url: playDemo,
+        data: {
+          filename : 'BuildingStyle_V0.1.rpk',
+        },
         success: data => {
           $('#result').text(data)
         },
-        error: (xhr, type) => {
-          $('#result').text('error')
-        }
+        error: (xhr, type) => { }
       })
     })
 
-    $('#btn-get-play').click(e => {
+    $('#btn-get-play02').click(e => {
+      $.ajax({
+        type: 'get',
+        url: playDemo,
+        data: {
+          filename : 'AncientCityofChina-V0.2.rpk',
+        },
+        success: data => {
+          $('#result').text(data)
+        },
+        error: (xhr, type) => { }
+      })
+    })
+
+    $('#btn-get-play03').click(e => {
+      $.ajax({
+        type: 'get',
+        url: playDemo,
+        data: {
+          filename : 'CircleHabeby-Sunban-v0.2.rpk',
+        },
+        success: data => {
+          $('#result').text(data)
+        },
+        error: (xhr, type) => { }
+      })
+    })
+
+    $('#btn-get-play04').click(e => {
+      $.ajax({
+        type: 'get',
+        url: playDemo,
+        data: {
+          filename : 'CreateUrban_Max-v0.3.rpk',
+        },
+        success: data => {
+          $('#result').text(data)
+        },
+        error: (xhr, type) => { }
+      })
+    })
+
+    $('#btn-get-play05').click(e => {
       $.ajax({
         type: 'get',
         url: playDemo,
@@ -176,6 +236,10 @@
         error: (xhr, type) => { }
       })
     })
+
+
+
+
     ;
   </script>
 </body>
